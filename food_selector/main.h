@@ -1,0 +1,9 @@
+#include <iostream>
+#include "foods.h"
+#include <string_view>
+void showChosenFood();
+void showMenu();
+void setChosenFood();
+void printChosenFood(std::string_view);
+using std::cin;
+using std::cout;

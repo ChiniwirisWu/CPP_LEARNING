@@ -12,13 +12,11 @@ bool isPrime(int x)
   }
   //i x j = product
 
-  for(int i = 2; i <= x; i++){
-    if(x != i){
-      if((x % i) == 0){
-        // it is divisible
-        return false;
-      } 
-    }   
+  for(int i = 2; i < x; i++){
+    if((x % i) == 0){
+      // it is divisible
+      return false;
+    } 
   }
 
   return true;

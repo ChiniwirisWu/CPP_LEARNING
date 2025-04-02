@@ -1,0 +1,4 @@
+In lesson 4.x -- Chapter 4 summary and quiz, we wrote a program to simulate a ball falling off of a tower. Because we didn’t have loops yet, the ball could only fall for 5 seconds.
+
+Take the program below and modify it so that the ball falls for as many seconds as needed until it reaches the ground. Update the program to use all covered best practices (namespaces, constexpr, etc…).
+

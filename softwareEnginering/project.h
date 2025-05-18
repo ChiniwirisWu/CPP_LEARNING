@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 #include "C-essentials/input.h"
+#include <iostream>
+#include <cstdlib>
+#include <string_view>
 class Project{
 private:
   std::string m_title {}; 
@@ -11,20 +14,62 @@ private:
   std::vector<std::string> m_functionalObjectives {};
   std::vector<std::string> m_technicalObjectives {};
 
+  void setMember(std::string_view label, std::string& member){
+    while(true){
+      // display
+      system("clear");
+      std::cout << label << std::endl;
+      member = getInput<std::string>();
+      // only continue if the input is valid.
+      if(member == ""){
+        clearInput();
+        std::cerr << "Invalid input, press any key to try again..." << std::endl;
+        std::cin.get();
+        continue;
+      } else {
+        clearInput();
+        system("clear");
+        std::cout << label << " saved" << std::endl;
+        std::cout << "Press any key to continue..." << std::endl;
+        std::cin.get();
+        return;
+      }
+    }
+  }
+
+  void setMultipleMembers(std::string_view label, std::vector<std::string>& memberVector){
+    std::string value {};
+    while(true){
+      system("clear");
+      std::cout << label << "(insert \"0\" to get to the following)" << std::endl;
+      value = getInput<std::string>();
+      // when the user inputs "", it means that he/her will not insert more values. 
+      if(value == "0"){
+        return;
+      }
+      memberVector.push_back(value);
+      clearInput();
+      system("clear");
+      std::cout << label << " saved" << std::endl;
+      std::cout << "Press any key to continue..." << std::endl;
+      std::cin.get();
+    }
+  }
+
 public:
   Project() = default;
 
   void setTitle(){
-    m_title = getInput<std::string>();
+    setMember("Title", m_title);
   }
   void setDescription(){
-    m_description = getInput<std::string>();
+    setMember("Description", m_description);
   }
   void setFunctionalObjectives(){
-    m_functionalObjectives.push_back(getInput<std::string>());
+    setMultipleMembers("Functional Objectives", m_functionalObjectives);
   }
   void setTechnicalObjectives(){
-    m_technicalObjectives.push_back(getInput<std::string>());
+    setMultipleMembers("Technical Objectives", m_technicalObjectives);
   }
 
   std::string& getTitle () {

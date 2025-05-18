@@ -7,6 +7,28 @@ Pida el titulo, descripcion, objetivos funcionales, y objetivos tecnicos.
  * */
 
 
-int main(){
+#include "project.h"
+#include "writer.h"
 
+void setProjectInfo(Project& project){
+  project.setTitle();
+  project.setDescription();
+  project.setFunctionalObjectives();
+  project.setTechnicalObjectives();
+}
+
+void writeProjectInfo(Project& project, Writer& writer){
+  writer.writeTitle(project);
+  writer.writeDescription(project);
+  writer.writeFunctionalObjectives(project);
+  writer.writeTechnicalObjectives(project);
+  writer.writeCurrentTime();
+}
+
+int main(){
+  Project project {};
+  Writer writer {};
+
+  setProjectInfo(project);
+  writeProjectInfo(project, writer);
 }

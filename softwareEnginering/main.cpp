@@ -23,6 +23,7 @@ void writeProjectInfo(Project& project, Writer& writer){
   writer.writeFunctionalObjectives(project);
   writer.writeTechnicalObjectives(project);
   writer.writeCurrentTime();
+  writer.closeFile();
 }
 
 int main(){

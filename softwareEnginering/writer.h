@@ -52,6 +52,10 @@ public:
     writeMultipleEntries("Technical Objectives", project.getTechnicalObjectives());
   }
 
+  void writeIssues(Project& project){
+    writeMultipleEntries("Issues", project.getIssues());
+  }
+
   void writeCurrentTime(){
     //security check
     if(!m_myFile.is_open()){

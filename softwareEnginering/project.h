@@ -13,6 +13,7 @@ private:
   std::string m_description {};
   std::vector<std::string> m_functionalObjectives {};
   std::vector<std::string> m_technicalObjectives {};
+  std::vector<std::string> m_issues {};
 
   void setMember(std::string_view label, std::string& member){
     while(true){
@@ -65,6 +66,9 @@ public:
   void setDescription(){
     setMember("Description", m_description);
   }
+  void setIssues(){
+    setMultipleMembers("Issues", m_issues);
+  }
   void setFunctionalObjectives(){
     setMultipleMembers("Functional Objectives", m_functionalObjectives);
   }
@@ -86,7 +90,12 @@ public:
 
   std::vector<std::string>& getTechnicalObjectives(){
     return m_technicalObjectives;
+
   }
+  std::vector<std::string>& getIssues(){
+    return m_issues;
+  }
+
 };
 
 #endif

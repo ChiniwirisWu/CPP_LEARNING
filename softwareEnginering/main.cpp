@@ -11,10 +11,11 @@ Pida el titulo, descripcion, objetivos funcionales, y objetivos tecnicos.
 #include "writer.h"
 
 void setProjectInfo(Project& project){
-  project.setTitle();
+  project.setIssues();
   project.setDescription();
   project.setFunctionalObjectives();
   project.setTechnicalObjectives();
+  project.setTitle();
 }
 
 void writeProjectInfo(Project& project, Writer& writer){
@@ -22,6 +23,7 @@ void writeProjectInfo(Project& project, Writer& writer){
   writer.writeDescription(project);
   writer.writeFunctionalObjectives(project);
   writer.writeTechnicalObjectives(project);
+  writer.writeIssues(project);
   writer.writeCurrentTime();
   writer.closeFile();
 }

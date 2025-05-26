@@ -1,0 +1,27 @@
+Title:
+Tracker de habitos
+
+Description:
+Programa que permita realizar un seguimiento de habitos.
+
+Functional Objectives:
+1) Registro e inicio de sesión
+2) Insertar un hábito
+3) Modificar un hábito
+4) Eliminar un hábito
+5) Ingresar la realización del hábito en dicho día.
+
+
+Technical Objectives:
+1) Se guarde los registros de la actividad diaria en un documento de texto
+2) Usar documentos de texto para guardar todos los datos (datos del login [usuario y contraseña], lista de habitos, habitos realizados ese dia)
+
+
+Issues:
+1) El mantenimiento de hábitos saludables no resulta agradable a través del uso de programas como Notion que tienen funcionalidades y aspecto predefinido.
+
+
+Created date
+Mon May 26 01:49:08 2025
+
+

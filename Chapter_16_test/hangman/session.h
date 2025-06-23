@@ -79,7 +79,8 @@ public:
 
         // game over handling
         if(isGameOver()){
-          std::cout << "Congratulations! you have guessed all the letters is in the word!\n\n";
+          std::cout << "Yes, '" << letter << "' is in the word!\n\n";
+          showStatus();
           m_isRunning = false;
         } else {
           std::cout << "Yes, '" << letter << "' is in the word!\n\n";
@@ -92,6 +93,7 @@ public:
         // game over handling
         if(isGameOver()){
           std::cout << "Game Over you have not guessed all the letters is in the word...\n\n";
+          showStatus();
           m_isRunning = false;
         } else {
           std::cout << "No, '" << letter << "' is not in the word!\n\n";
